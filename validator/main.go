@@ -27,18 +27,18 @@ func validateCPF(c string) bool {
 	}
 
 	//calculando primeiro dígito verificador
-	sum := 0
+	sum1 := 0
 	for i := range 9 {
 		digit, err := strconv.Atoi(string(cpf[i]))
 		if err != nil {
 			return false
 		}
-		sum += digit * (10 - i)
+		sum1 += digit * (10 - i)
 	}
 
-	rest := (sum * 10) % 11
-	if rest == 10 {
-		rest = 0
+	rest1 := (sum1 * 10) % 11
+	if rest1 == 10 {
+		rest1 = 0
 	}
 
 	firstDigit, err := strconv.Atoi(string(cpf[9]))
@@ -46,23 +46,23 @@ func validateCPF(c string) bool {
 		return false
 	}
 
-	if rest != firstDigit {
+	if rest1 != firstDigit {
 		return false
 	}
 
 	//calculando o segundo dígito verificador
-	soma := 0
+	sum2 := 0
 	for i := range 10 {
 		digit, err := strconv.Atoi(string(cpf[i]))
 		if err != nil {
 			return false
 		}
-		soma += digit * (10 - i)
+		sum2 += digit * (11 - i)
 	}
 
-	resto := (soma * 10) % 11
-	if resto == 10 {
-		resto = 0
+	rest2 := (sum2 * 10) % 11
+	if rest2 == 10 {
+		rest2 = 0
 	}
 
 	secondDigit, err := strconv.Atoi(string(cpf[10]))
@@ -70,7 +70,7 @@ func validateCPF(c string) bool {
 		return false
 	}
 
-	if rest != secondDigit {
+	if rest2 != secondDigit {
 		return false
 	}
 
