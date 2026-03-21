@@ -84,8 +84,19 @@ func main() {
 	fmt.Scan(&cpf)
 
 	if validateCPF(cpf) {
-		fmt.Println("CPF VÁLIDO")
+		fmt.Println("CPF VÁLIDO !!")
 	} else {
-		fmt.Println("CPF INVÁLIDO")
+		fmt.Println("CPF INVÁLIDO !!")
 	}
 }
+
+//*                      ________  ________  ________ 
+//*                     |\   ____\|\   __  \|\  _____\
+//*                     \ \  \___|\ \  \|\  \ \  \__/ 
+//*                      \ \  \    \ \   ____\ \   __\
+//*                       \ \  \____\ \  \___|\ \  \_|
+//*                        \ \_______\ \__\    \ \__\ 
+//*                         \|_______|\|__|     \|__| 
+//*                                                  
+                               
+                              
