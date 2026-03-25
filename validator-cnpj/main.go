@@ -26,24 +26,17 @@ func validateCnpj(c string) bool {
 		return false
 	}
 
-	if  cnpj[0]  == cnpj[1] &&
-		cnpj[1]  == cnpj[2] &&
-		cnpj[2]  == cnpj[3] &&
-		cnpj[3]  == cnpj[4] &&
-		cnpj[4]  == cnpj[5] &&
-		cnpj[5]  == cnpj[6] &&
-		cnpj[6]  == cnpj[7] &&
-		cnpj[7]  == cnpj[8] &&
-		cnpj[8]  == cnpj[9] &&
-		cnpj[9]  == cnpj[10] &&
-		cnpj[10] == cnpj[11] &&
-		cnpj[11] == cnpj[12] &&
-		cnpj[12] == cnpj[13] &&
-		cnpj[13] == cnpj[0] {
-		return false
+	counter := 0
+	for k := 0; k < len(cnpj); k++ {
+		if cnpj[0] == cnpj[k] {
+			counter++
+		}
+		if counter == len(cnpj) {
+			return false
+		}
 	}
 
-	// calcular aqui 
+	// calcular aqui
 
 	return true
 }

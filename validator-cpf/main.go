@@ -21,19 +21,14 @@ func validateCPF(c string) bool {
 		return false
 	}
 
-	//verifica se todos os dígitos são iguais
-	if  cpf[0]  == cpf[1] &&
-		cpf[1]  == cpf[2] &&
-		cpf[2]  == cpf[3] &&
-		cpf[3]  == cpf[4] &&
-		cpf[4]  == cpf[5] &&
-		cpf[5]  == cpf[6] &&
-		cpf[6]  == cpf[7] &&
-		cpf[7]  == cpf[8] &&
-		cpf[8]  == cpf[9] &&
-		cpf[9]  == cpf[10] &&
-		cpf[10] == cpf[0] {
-		return false
+	counter := 0
+	for k := 0; k < len(cpf); k++ {
+		if cpf[0] == cpf[k] {
+			counter++
+		}
+		if counter == len(cpf){
+			return false
+		}
 	}
 
 	//calculando primeiro dígito verificador
